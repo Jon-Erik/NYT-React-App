@@ -8,6 +8,20 @@ export default {
 	},
 
 	saveArticle: function(articleData) {
-		return axios.post("/api/articles/", articleData);
-	}	
+		return axios.post("/api/articles", articleData);
+	},
+
+	getSavedArticles: function() {
+		return axios.get("/api/articles");
+	},
+
+	saveNote: function(noteData) {
+		return axios.post("/api/notes", noteData);
+	},
+
+	deleteNote: function(noteData) {
+		console.log("passing through api")
+		console.log(noteData)
+		return axios.delete("api/notes/" + noteData.noteId + "/" + noteData.articleId);
+	}
 };

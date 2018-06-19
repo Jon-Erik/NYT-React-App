@@ -18,6 +18,11 @@ var ArticleSchema = new Schema({
 		required: true
 	},
 
+	pubDate: {
+		type: String,
+		required: true
+	},
+
 	notes: [
 		{
 			type: Schema.Types.ObjectId,

@@ -10,8 +10,8 @@ class OneResult extends React.Component {
 		API.saveArticle({
 			headline: this.props.headline,
 			pubDate: this.props.pubDate,
-			summary: this.props.summary,
-			web_url: this.props.url
+			snippet: this.props.summary,
+			URL: this.props.url
 		}).then(function(res) {
 			console.log("article saved");
 		}).catch(function(err) {

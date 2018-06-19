@@ -1,10 +1,27 @@
 import React from "react";
-import OneSaved from "../components/OneSaved"
+import OneSaved from "../components/OneSaved";
+import API from "../utils/API";
+
 
 class SavedArticles extends React.Component {
 
 	state = {
 		savedArticles: []
+	}
+
+	componentDidMount() {
+		this.getArticles();
+	}
+
+	getArticles = () => {
+		API.getSavedArticles()
+		.then( (dbArticles) =>  {
+			let savedArticles = dbArticles.data;
+			//console.log(savedArticles);
+			this.setState({
+				savedArticles: savedArticles
+			})
+		})
 	}
 
 	render() {
@@ -17,12 +34,14 @@ class SavedArticles extends React.Component {
 			    {!this.state.savedArticles.length ? (
 						<h6>No articles to display. Saved articles from searches will appear here.</h6>
 					) : (
-						this.state.SavedArticles.map(article =>
+						this.state.savedArticles.map(article =>
 						<OneSaved key={article._id}
-		    		url={article.web_url}
-		    		headline={article.headline.main}
-		    		pubDate={article.pub_date}
-		    		summary={article.snippet}/>
+						articleId={article._id}
+		    		url={article.URL}
+		    		headline={article.headline}
+		    		pubDate={article.pubDate}
+		    		summary={article.snippet}
+		    		notes={article.notes}/>
 					))}
 			  </div>
 			</div>

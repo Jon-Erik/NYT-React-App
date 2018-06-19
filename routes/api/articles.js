@@ -1,12 +1,10 @@
 const router = require("express").Router();
 const articlesController = require("../../controllers/articlesController");
 
-// router.route("/api/articles").get(articlesController.findAll);
+router.get("/", articlesController.findAll);
 
-// router.route("/api/articles").post(articlesController.saveArticle);
+router.post("/", articlesController.saveArticle);
 
-// router.route("/api/articles").delete(articlesController.deleteArticle);
-
-router.route("/").post(articlesController.saveArticle)
+router.delete("/", articlesController.deleteArticle);
 
 module.exports = router;
