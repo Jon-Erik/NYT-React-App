@@ -11,6 +11,10 @@ export default {
 		return axios.post("/api/articles", articleData);
 	},
 
+	deleteArticle: function(articleId) {
+		return axios.delete("/api/articles/" + articleId);
+	},
+
 	getSavedArticles: function() {
 		return axios.get("/api/articles");
 	},
@@ -20,8 +24,6 @@ export default {
 	},
 
 	deleteNote: function(noteData) {
-		console.log("passing through api")
-		console.log(noteData)
 		return axios.delete("api/notes/" + noteData.noteId + "/" + noteData.articleId);
 	}
 };

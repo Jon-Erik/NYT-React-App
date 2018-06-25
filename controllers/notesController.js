@@ -16,12 +16,8 @@ module.exports = {
 	},
 
 	deleteNote: function(req, res) {
-		
 		let noteId = req.params.noteId;
 		let articleId = req.params.articleId;
-		
-		console.log(noteId);
-		console.log(articleId);
 
 		db.Note.remove({_id: noteId})
 		.then(function(response) {

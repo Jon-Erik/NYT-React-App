@@ -22,13 +22,33 @@ module.exports = {
 	},
 
 	deleteArticle: function(req, res) {
-		db.Article.findById({ _id: req.params.id})
-		.then(function(dbModel) {
-			dbModel.remove();
-		}).then(function(dbModel) {
-			res.json(dbModel);
+		var articleId = req.params.articleId;
+
+		db.Article.find({_id: articleId})
+		.then(function(result) {
+			var noteIds = [];
+			for (i = 0; i < result[0].notes.length; i++) {
+				noteIds.push(result[0].notes[i]);
+			}
+
+			db.Note.remove({_id: {$in: noteIds}})
+			.then(function(result) {
+
+				db.Article.remove({_id: articleId})
+				.then(function(result) {
+					console.log("article deleted with its notes");
+					res.send("article deleted with its notes");
+				}).catch(function(err) {
+					console.log(err);
+					res.send(err);
+				});
+			}).catch(function(err) {
+				console.log(err);
+				res.send(err);
+			});
 		}).catch(function(err) {
-			res.status(422).json(err);
+			console.log(err);
+			res.send(err);
 		});
 	},	
 };

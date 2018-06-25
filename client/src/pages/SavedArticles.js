@@ -17,10 +17,29 @@ class SavedArticles extends React.Component {
 		API.getSavedArticles()
 		.then( (dbArticles) =>  {
 			let savedArticles = dbArticles.data;
-			//console.log(savedArticles);
+			console.log(savedArticles);
 			this.setState({
 				savedArticles: savedArticles
 			})
+		})
+	}
+
+	deleteArticle = event => {
+		event.preventDefault();
+
+		let articleId = event.target.id;
+		let articleIndex = event.target.name;
+
+		API.deleteArticle(articleId)
+		.then((res) => {
+			//console.log("article deleted from db");
+			let updatedArticles = this.state.savedArticles;
+			updatedArticles.splice(articleIndex, 1)
+			this.setState({
+				savedArticles: updatedArticles
+			});
+		}).catch(function(err) {
+			console.log(err);
 		})
 	}
 
@@ -36,12 +55,14 @@ class SavedArticles extends React.Component {
 					) : (
 						this.state.savedArticles.map(article =>
 						<OneSaved key={article._id}
-						articleId={article._id}
+						articleIndex={this.state.savedArticles.indexOf(article)}
+		    		articleId={article._id}
 		    		url={article.URL}
 		    		headline={article.headline}
 		    		pubDate={article.pubDate}
 		    		summary={article.snippet}
-		    		notes={article.notes}/>
+		    		notes={article.notes}
+		    		deleteArticle={this.deleteArticle}/>
 					))}
 			  </div>
 			</div>

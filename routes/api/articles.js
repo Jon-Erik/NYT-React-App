@@ -5,6 +5,6 @@ router.get("/", articlesController.findAll);
 
 router.post("/", articlesController.saveArticle);
 
-router.delete("/", articlesController.deleteArticle);
+router.delete("/:articleId", articlesController.deleteArticle);
 
 module.exports = router;
