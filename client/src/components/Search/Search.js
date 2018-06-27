@@ -15,7 +15,7 @@ const Search = props => (
 			    	className="form-control" 
 			    	name="query"
 			    	onChange={props.handleInputChange}
-			    	placeholder="Enter Topic Here"/>
+			    	placeholder="Enter topic here"/>
 			  </div>
 			  <div className="form-group">
 			    <label htmlFor="start-year">Start Year</label>
@@ -33,7 +33,7 @@ const Search = props => (
 			    	onChange={props.handleInputChange}
 			    	placeholder="Ex: 2005"/>
 			  </div>
-			  <button className="btn" onClick={props.handleFormSubmit}>Search</button>
+			  <button className="btn search-btn" onClick={props.handleFormSubmit}>Search</button>
 			</form>
 		</div>
 	</div>

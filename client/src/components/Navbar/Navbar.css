@@ -1,0 +1,44 @@
+.form-inline button {
+	margin-right: 15px;
+	padding: 0px;
+	border-radius: 0;
+	background-color: #5b5b5b;
+}
+
+a.navbar-brand {
+	margin: 0 0 3px 0;
+	padding: 0;
+	color: black;
+	height: auto;
+}
+
+h4.btn {
+	padding: 0;
+	margin: 0 15px 0 0;
+}
+
+a.navbar-brand:hover {
+	color: #545454;
+}
+
+.navbar-brand {
+	font-family: 'Eczar', serif;
+	font-size: 30px;
+}
+
+.nav-link {
+	padding: 3px;
+	font-family: 'Eczar', serif;
+	font-size: 20px;
+	line-height: 20px;
+	color: white;
+}
+
+.nav-link:hover {
+	color: #afafaf;
+}
+
+nav.navbar {
+	background-color:;
+	border-bottom: 3px solid #5b5b5b;
+}

@@ -1,3 +1,41 @@
 .search-box {
 	margin: 25px;
+	border: 1px solid #5b5b5b;
+	border-radius: 0;
+}
+
+.card-header h3 {
+	font-family: 'Eczar', serif;
+	font-size: 25px;
+	text-align: center;
+	margin-bottom: 0;
+	color: white;
+	margin-top: 1px;
+}
+
+.card-header {
+	border-bottom: 1px solid black;
+	padding: 5px;
+	background-color: #5b5b5b;
+	border-radius: 0 !important;
+}
+
+button.search-btn {
+	color: white;
+	background-color: #5b5b5b;
+	border-radius: 0;
+	font-family: 'Libre Baskerville', serif;
+}
+
+button.search-btn:hover {
+	color: #afafaf;
+}
+
+.form-group label, .form-group input {
+	font-family: 'Libre Baskerville', serif;
+	font-size: 15px;
+}
+
+.form-group input {
+	border-radius: 0;
 }

@@ -2,13 +2,18 @@ import React from "react";
 import Search from "../components/Search";
 import SearchResults from "../components/SearchResults";
 import API from "../utils/API";
+import ErrorModal from "../components/ErrorModal";
+import "./WelcomeSearch.css";
+//import * as ReactBootstrap from "react-bootstrap";
 
 class WelcomeSearch extends React.Component {
 	state = {
 		query: "",
 		startYear: "",
 		endYear: "",
-		searchResults: []
+		searchResults: [],
+		errorMessage: "",
+		show: false
 	};
 
 	handleInputChange = event => {
@@ -45,10 +50,18 @@ class WelcomeSearch extends React.Component {
 					//console.log('real number 4 digits long, start and end years')
 					this.searchForArticles(queryString + startYearString + endYearString)
 			} else {
-					console.log("please make sure your start year and/or end year are valid")
+					// console.log("please make sure your start year and/or end year are valid")
+					this.setState({
+						errorMessage: "Please ensure your start year and/or end year are valid."
+					})
+					this.handleShow();
 			}
 		} else {
-				alert("You must enter a search topic")
+				//alert("You must enter a search topic")
+				this.setState({
+					errorMessage: "You must enter a search topic."
+				})
+				this.handleShow();
 		};	
 	}
 
@@ -61,21 +74,36 @@ class WelcomeSearch extends React.Component {
 			).catch(err => console.log(err))
 	}
 
-	saveArticle = () => {
+	constructor(props) {
+		super(props);
 
+		this.handleShow = this.handleShow.bind(this);
+		this.handleClose = this.handleClose.bind(this);
+	}
+
+	
+
+	handleClose() {
+		this.setState({show: false});
+	}
+
+	handleShow() {
+		this.setState({show: true})
 	}
 	
 	render() {
 		return (
 			<div>
-				<h3>Welcome to NYTimes Search</h3>
 				<Search handleInputChange={this.handleInputChange}
 								handleFormSubmit={this.handleFormSubmit}/>
 				{!this.state.searchResults.length ? (
-					<h3>No articles to display. Start a search above.</h3>
+					<h3 className="no-articles-msg"><i>No articles to display. Start a search above.</i></h3>
 				) : (
 					<SearchResults searchResults={this.state.searchResults}/>
 				)}
+				<ErrorModal errorMessage={this.state.errorMessage}
+										handleClose={this.handleClose}
+										showState={this.state.show}/>
 			</div>
 		);
 	};
