@@ -34,6 +34,10 @@ a.navbar-brand:hover {
 	color: white;
 }
 
+.nav-link:focus {
+	color: white;
+}
+
 .nav-link:hover {
 	color: #afafaf;
 }

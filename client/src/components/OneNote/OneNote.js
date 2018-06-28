@@ -5,15 +5,15 @@ class OneNote extends React.Component {
 
 	render() {
 		return (
-			<li >
+			<li className="one-note">
 				{this.props.body}
-					<a className="btn" 
+					<a className="btn delete-note" 
 					href=""
 					name={this.props.index}
 					id={this.props.noteid}
 					onClick={this.props.deleteNote}
 					>
-						X
+						&times;
 					</a>
 			</li>
 		)

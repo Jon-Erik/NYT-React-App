@@ -1,0 +1,21 @@
+li.one-note {
+	font-family: 'Libre Baskerville', serif;
+}
+
+a.delete-note {
+	font-size: 30px;
+	line-height: 15px;
+	color: white;
+	background-color: #5b5b5b;
+	margin: 2px 0 2px 5px;
+	padding: 2px;
+}
+
+a.delete-note:hover {
+	color: #afafaf;
+}
+
+a.delete-note:focus {
+	color: white;
+	box-shadow: none;
+}

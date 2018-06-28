@@ -1,6 +1,7 @@
 import React from "react";
 import OneSaved from "../components/OneSaved";
 import API from "../utils/API";
+import "./SavedArticles.css"
 
 
 class SavedArticles extends React.Component {
@@ -17,7 +18,7 @@ class SavedArticles extends React.Component {
 		API.getSavedArticles()
 		.then( (dbArticles) =>  {
 			let savedArticles = dbArticles.data;
-			console.log(savedArticles);
+			//console.log(savedArticles);
 			this.setState({
 				savedArticles: savedArticles
 			})
@@ -45,13 +46,13 @@ class SavedArticles extends React.Component {
 
 	render() {
 		return (
-			<div className="card">
-			  <div className="card-header">
+			<div className="card saved-articles-box">
+			  <div className="card-header saved-header">
 			    <h3>Saved Articles and Notes</h3>
 			  </div>
 			  <div className="card-body">
 			    {!this.state.savedArticles.length ? (
-						<h6>No articles to display. Saved articles from searches will appear here.</h6>
+						<h6 className="no-saved-message"><i>No articles to display. Saved articles from searches will appear here.</i></h6>
 					) : (
 						this.state.savedArticles.map(article =>
 						<OneSaved key={article._id}

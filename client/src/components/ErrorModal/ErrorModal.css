@@ -4,15 +4,23 @@ div.modal {
 
 div.modal-content {
 	border-radius: 0;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 }
 
-button.btn {
+button.close-modal {
 	border-radius: 0;
 	color: white;
 	background-color: #5b5b5b;
 	font-family: 'Eczar', serif;
 	font-size: 17px;
+}
+
+button.close-modal:hover {
+	color: #afafaf;
+}
+
+button.close-modal:focus {
+	color: white;		
 }
 
 h4.modal-title {

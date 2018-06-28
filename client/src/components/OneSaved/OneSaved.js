@@ -39,6 +39,7 @@ class OneSaved extends React.Component {
 			this.setState({
 				notes: savedNotes
 			})
+			//document.getElementsByTagName("textarea").value = "";
 			console.log("note saved");
 		}).catch(function(err) {
 			console.log(err);
@@ -71,13 +72,13 @@ class OneSaved extends React.Component {
 
 	render() {
 		return(
-			<div className="card">
+			<div className="card one-saved-box">
 			  <div className="card-body">
-			    <a href={this.props.url} ><h5 className="card-title">{this.props.headline}</h5></a>
-			    <p className="card-text">Published: {this.props.pubDate.substr(0, 10)}</p>
-			    <p className="card-text">{this.props.summary}</p>
+			    <a href={this.props.url} ><h5 className="card-title saved-title">{this.props.headline}</h5></a>
+			    <p className="card-text saved-text">Published: {this.props.pubDate.substr(0, 10)}</p>
+			    <p className="card-text saved-text">{this.props.summary}</p>
 			    {!this.props.notes.length ? (
-			    		<p><i>No notes to display</i></p>
+			    		<p className="saved-text"><i>No notes to display</i></p>
 			    	) : (
 			    		<ul>
 			    		{this.state.notes.map(note => (
@@ -90,14 +91,15 @@ class OneSaved extends React.Component {
 			    		))}
 			    		</ul>
 			    	)}
-			    <textarea 
+			    <textarea
+			    	className="note-input" 
 			    	type="text" 
 			    	placeholder="Type a new note here"
 			    	onChange={this.handleInputChange}
 			    	name="newNote"/>
-			    <a href="" className="btn" onClick={this.saveNote}>Add note to article</a>
+			    <a href="" className="btn saved-article-button" onClick={this.saveNote}>Add note to article</a>
 			    <a href="" 
-			    	 className="btn" 
+			    	 className="btn saved-article-button" 
 			    	 onClick={this.props.deleteArticle} 
 			    	 id={this.props.articleId}
 			    	 name={this.props.articleIndex}>

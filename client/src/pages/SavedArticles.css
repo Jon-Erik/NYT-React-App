@@ -1,21 +1,23 @@
-.card.results-box {
+.saved-articles-box {
 	margin: 25px;
-}
-
-div.results-box {
 	border-radius: 0;
 	border: 1px solid #5b5b5b;
 }
 
-div.results-header h3 {
+.saved-header h3 {
 	margin: 0;
-	color: white;
+	text-align: center;
 	font-family: 'Eczar', serif;
 	font-size: 25px;
-	text-align: center;
+	color: white;
 }
 
-div.results-header {
+.saved-header {
 	background-color: #5b5b5b;
 	border-bottom: none;
+}
+
+h6.no-saved-message {
+	font-family: 'Libre Baskerville', serif;
+	font-size: 15px;
 }

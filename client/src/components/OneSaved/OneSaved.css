@@ -1,3 +1,36 @@
 textarea {
 	width: 100%;
 }
+
+div.one-saved-box {
+	border: 1px solid #5b5b5b;
+	border-radius: 0;
+	margin-bottom: 15px;
+}
+
+h5.saved-title, p.saved-text, a.saved-article-button, textarea.note-input {
+	font-family: 'Libre Baskerville', serif;
+}
+
+h5.saved-title {
+	line-height: 25px;
+	font-size: 18px;
+	color: #5b5b5b;
+	font-weight: bold;
+}
+
+a.saved-article-button {
+	background-color: #5b5b5b;
+	border-radius: 0;
+	color: white;
+	margin: 0 15px 5px 0;
+}
+
+a.saved-article-button:hover {
+	color: #afafaf;
+}
+
+a.saved-article-button:focus {
+	color: white;
+	box-shadow: none;
+}

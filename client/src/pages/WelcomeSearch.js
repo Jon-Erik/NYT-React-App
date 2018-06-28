@@ -13,7 +13,7 @@ class WelcomeSearch extends React.Component {
 		endYear: "",
 		searchResults: [],
 		errorMessage: "",
-		show: false
+		show: false,
 	};
 
 	handleInputChange = event => {
@@ -80,8 +80,6 @@ class WelcomeSearch extends React.Component {
 		this.handleShow = this.handleShow.bind(this);
 		this.handleClose = this.handleClose.bind(this);
 	}
-
-	
 
 	handleClose() {
 		this.setState({show: false});

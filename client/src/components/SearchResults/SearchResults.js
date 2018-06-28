@@ -4,7 +4,7 @@ import OneResult from "../OneResult";
 
 const SearchResults = props => (
 	<div className="card results-box">
-  	<div className="card-header">
+  	<div className="card-header results-header">
     	<h3>Search Results</h3>
 	  </div>
 	  <div className="card-body">

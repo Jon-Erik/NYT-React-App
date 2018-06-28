@@ -1,0 +1,31 @@
+div.result-card {
+	border: 1px solid #5b5b5b;
+	margin-bottom: 15px;
+	border-radius: 0;
+}
+
+h5.result-title, p.result-text, a.save-article-btn {
+	font-family: 'Libre Baskerville', serif;
+}
+
+h5.result-title {
+	line-height: 25px;
+	font-size: 18px;
+	color: #5b5b5b;
+	font-weight: bold;
+}
+
+a.save-article-btn {
+	background-color: #5b5b5b;
+	border-radius: 0;
+	color: white;
+}
+
+a.save-article-btn:hover {
+	color: #afafaf;
+}
+
+a.save-article-btn:focus {
+	color: white;
+	box-shadow: none;
+}

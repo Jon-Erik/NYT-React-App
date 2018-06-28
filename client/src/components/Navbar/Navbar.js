@@ -10,18 +10,12 @@ const Navbar = () => (
 					New York Times Search
 				</Link>
 	  	</h4>
-	  	<button className= '{
-	  		window.location.pathname === "/" 
-	  			? "nav-item active"
-	  			: "nav-item"} btn'>
+	  	<button className='btn'>
 	  		<Link className="nav-link" to="/saved">
 					Saved Articles
 				</Link>
 	  	</button>
-	  	<button className= '{
-	  		window.location.pathname === "/saved" 
-	  			? "nav-item active"
-	  			: "nav-item"} btn'>
+	  	<button className='btn'>
 	  		<Link className="nav-link" to="/">
 					Home
 				</Link>

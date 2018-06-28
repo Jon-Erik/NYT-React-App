@@ -1,20 +1,20 @@
 import React from "react";
-import "./ErrorModal.css";
+import "./SaveModal.css";
 import * as ReactBootstrap from "react-bootstrap";
 var Modal = ReactBootstrap.Modal;
 
-const ErrorModal = props => (
-	<Modal className="error-modal" 
+const SaveModal = props => (
+	<Modal className="save-modal" 
 				 show={props.showState} 
 				 onHide={props.handleClose}>
 
 	  <Modal.Dialog>
 	    <Modal.Header >
-	      <Modal.Title>Error!</Modal.Title>
+	      <Modal.Title>Success!</Modal.Title>
 	    </Modal.Header>
 
 	    <Modal.Body>
-	    	<p>{props.errorMessage}</p>
+	    	<p>This article has been saved. You can view and comment on it on the "Saved Articles" page.</p>
 	    </Modal.Body>
 
 	    <Modal.Footer>
@@ -24,4 +24,4 @@ const ErrorModal = props => (
 	</Modal>
 );
 
-export default ErrorModal;
+export default SaveModal;

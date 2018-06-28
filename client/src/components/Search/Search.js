@@ -3,7 +3,7 @@ import "./Search.css";
 
 const Search = props => (
 	<div className="card search-box">
-		<div className="card-header">
+		<div className="card-header search-header">
 			<h3>Search New York Times Articles Here</h3>
 		</div>
 		<div className="card-body">
