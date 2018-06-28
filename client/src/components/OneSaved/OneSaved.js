@@ -4,7 +4,11 @@ import API from "../../utils/API";
 import OneNote from "../OneNote";
 
 class OneSaved extends React.Component {
-	
+	constructor(props) {
+		super(props);
+		this.inputRef = React.createRef();
+	}
+
 	state = {
 		newNote: "",
 		notes: this.props.notes
@@ -39,7 +43,7 @@ class OneSaved extends React.Component {
 			this.setState({
 				notes: savedNotes
 			})
-			//document.getElementsByTagName("textarea").value = "";
+			this.inputRef.current.value = "";
 			console.log("note saved");
 		}).catch(function(err) {
 			console.log(err);
@@ -92,6 +96,7 @@ class OneSaved extends React.Component {
 			    		</ul>
 			    	)}
 			    <textarea
+			    	ref={this.inputRef}
 			    	className="note-input" 
 			    	type="text" 
 			    	placeholder="Type a new note here"
