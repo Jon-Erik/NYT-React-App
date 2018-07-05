@@ -43,8 +43,9 @@ class OneSaved extends React.Component {
 			this.setState({
 				notes: savedNotes
 			})
+			//a React ref to clear the note input textarea
 			this.inputRef.current.value = "";
-			console.log("note saved");
+			//console.log("note saved");
 		}).catch(function(err) {
 			console.log(err);
 		})
@@ -54,7 +55,7 @@ class OneSaved extends React.Component {
 		event.preventDefault();
 		let noteId = event.target.id;
 		let noteIndex = event.target.name;
-		console.log(noteIndex);
+		//console.log(noteIndex);
 
 		let noteData = {
 			noteId: noteId,
@@ -65,10 +66,11 @@ class OneSaved extends React.Component {
 		.then((res) => {
 			let updatedNotes = this.state.notes;
 			updatedNotes.splice(noteIndex, 1)
+			//removes the note from the state of the saved article
 			this.setState({
 				notes: updatedNotes
 			});
-			console.log("note deleted");
+			//console.log("note deleted");
 		}).catch(function(err) {
 			console.log(err);
 		})

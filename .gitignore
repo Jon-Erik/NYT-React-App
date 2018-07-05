@@ -25,3 +25,4 @@ yarn-error.log*
 NYTimes-tests
 
 #API key
+API-key.js

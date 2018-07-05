@@ -34,6 +34,7 @@ class SavedArticles extends React.Component {
 		API.deleteArticle(articleId)
 		.then((res) => {
 			//console.log("article deleted from db");
+			//removes articles from the state of this page component
 			let updatedArticles = this.state.savedArticles;
 			updatedArticles.splice(articleIndex, 1)
 			this.setState({

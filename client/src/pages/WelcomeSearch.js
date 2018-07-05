@@ -27,6 +27,7 @@ class WelcomeSearch extends React.Component {
 	handleFormSubmit = event => {
 		event.preventDefault();
 
+		//creates the query string for the nytimes api call
 		let queryString = "&q=" + this.state.query;
 		let startYearString = "&begin_date=" + this.state.startYear + "0101";
 		let endYearString = "&end_date=" + this.state.endYear + "1231";
