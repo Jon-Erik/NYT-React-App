@@ -1,5 +1,7 @@
 # NYT-React-App
 
+## Coding Bootcamp Project
+
 #### Full stack React application using the New York Times article search API
 
 ###### This application requires a New York Times API key which can be requested at https://developer.nytimes.com/signup
